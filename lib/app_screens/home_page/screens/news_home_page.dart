@@ -28,13 +28,13 @@ class _NewsHomePageState extends State<NewsHomePage>
     _scrollController = ScrollController();
     _tabController = TabController(length: 6, vsync: this);
     context.read<NewsCubit>().initialize();
-    debugPrint('scrollcontroller has clients');
+    // debugPrint('scrollcontroller has clients');
     _scrollController.addListener(() {
-      debugPrint('scrollcontroller listeners add');
+      // debugPrint('scrollcontroller listeners add');
       if (_scrollController.position.pixels ==
           _scrollController.position.maxScrollExtent) {
         // User reached the end of the list, load more items
-        debugPrint('scrollcontroller adding more');
+        // debugPrint('scrollcontroller adding more');
         context.read<NewsCubit>().loadMoreCurrentCategoryNews();
       }
     });
